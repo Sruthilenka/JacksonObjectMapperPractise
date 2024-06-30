@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import utilities.jsonPOJO;
+import utilities.Laptop;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ public class ListOfObjs {
         ObjectMapper mapper = new ObjectMapper();
         try {
             //Have to pass an object of Jackson's type reference class
-            List<jsonPOJO> objects = mapper.readValue(json, new TypeReference<List<jsonPOJO>>(){});
-            for(jsonPOJO jp: objects )
+            List<Laptop> objects = mapper.readValue(json, new TypeReference<List<Laptop>>(){});
+            for(Laptop jp: objects )
                 System.out.println(jp);
         } catch (JsonMappingException e) {
             e.printStackTrace();

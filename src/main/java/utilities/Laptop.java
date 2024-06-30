@@ -1,12 +1,13 @@
 package utilities;
 
-public class jsonPOJO {
+public class Laptop {
+
 
     private String brand;
     private String model;
 
     //Default Constructor
-    public jsonPOJO(){
+    public Laptop(){
     }
 
     public String getBrand(){
@@ -27,7 +28,7 @@ public class jsonPOJO {
 
     @Override
     public String toString() {
-        return "JsonPOJO{" +
+        return "Laptop{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 '}';

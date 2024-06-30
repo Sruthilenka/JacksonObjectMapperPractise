@@ -1,6 +1,6 @@
 package DeSerialize.StringToArrayOfObjs;
 
-import utilities.jsonPOJO;
+import utilities.Laptop;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,8 +12,8 @@ public class ArrayOfObjs {
             ObjectMapper mapper = new ObjectMapper();
             try {
                 //Convert to array of the pojo class type
-                jsonPOJO[] objects = mapper.readValue(json, jsonPOJO[].class);
-                for(jsonPOJO jp: objects )
+                Laptop[] objects = mapper.readValue(json, Laptop[].class);
+                for(Laptop jp: objects )
                 System.out.println(jp);
             } catch (JsonMappingException e) {
                 e.printStackTrace();

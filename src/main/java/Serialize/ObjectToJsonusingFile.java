@@ -4,25 +4,20 @@ import com.fasterxml.jackson.core.exc.StreamWriteException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import utilities.Laptop;
-import java.io.IOException;
-import java.io.StringWriter;
 
-public class JavaObjectToJsonString {
+import java.io.File;
+import java.io.IOException;
+
+public class ObjectToJsonusingFile {
     public static void main(String[] args) {
         Laptop lap = new Laptop();
         lap.setBrand("Abc");
         lap.setModel("XYZ");
 
         ObjectMapper mapper = new ObjectMapper();
-        //Can write the string to the writer - Writer is an abstraction used for writing JSON content. It represents an output destination where JSON data is written, such as a file, network stream, or any other output sink.
-        StringWriter writer = new StringWriter();
-        try{
-            mapper.writeValue(writer,lap);
-
-            //convert this writer to String
-            String json= writer.toString();
-            System.out.println(json);
-        }catch (StreamWriteException e) {
+        try {
+            mapper.writeValue(new File("target/result.json"), lap);
+        } catch (StreamWriteException e) {
             throw new RuntimeException(e);
         } catch (DatabindException e) {
             throw new RuntimeException(e);
