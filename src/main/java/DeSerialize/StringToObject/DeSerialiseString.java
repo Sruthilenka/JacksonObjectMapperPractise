@@ -7,7 +7,6 @@ import utilities.Laptop;
 
 public class DeSerialiseString {
     public static void main(String[] args) throws JsonProcessingException {
-     //   String json = "{\"brand\":\"Abc\",\"model\":\"XYZ\"}";
         String json = "{\"brand\":\"Abc\",\"model\":\"XYZ\"}";
         ObjectMapper mapper = new ObjectMapper();
         try {
