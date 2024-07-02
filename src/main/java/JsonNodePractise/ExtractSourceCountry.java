@@ -48,7 +48,7 @@ public class ExtractSourceCountry {
         ObjectMapper mapper = new ObjectMapper();
         try{
             JsonNode root = mapper.readTree(jsonResponse);
-           JsonNode courseArray = root.path("courseAlloted");
+           JsonNode courseArray = root.get("courseAlloted"); // Can use get or path method
            for(JsonNode course: courseArray){
                if(course.path("SourceCountry").asText().equals("Dollar")){
                    String courseName = course.path("courseName").asText();
